@@ -1,0 +1,61 @@
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    border-bottom: solid lightgrey 1px;
+    padding: 0;
+    border-spacing: 0;
+}
+
+.thead {
+    background-color: #51b502;
+    font-weight: normal;
+    color: white;
+    border: solid green 0.1px;
+}
+
+tr:nth-child(2n) {
+    background-color: #EEEEDD;
+}
+
+td {
+    padding: 4px;
+}
+
+.space {
+    border-right: solid lightgrey 1px;
+    border-left: solid lightgrey 1px;
+    column-width: 100px;
+}
+
+.name {
+    column-width: 150px;
+}
+
+#bg:before {
+    content: url('bulgarian_flag.png');
+    vertical-align: -50%;
+    padding: 0 5px 0 0;
+}
+
+#rm:before {
+    content: url('romania_flag.png');
+    vertical-align: -50%;
+    padding: 0 5px 0 0;
+}
+
+#mc:before {
+    content: url('macedonia_flag.png');
+    vertical-align: -50%;
+    padding: 0 5px 0 0;
+}
+
+#sr:before {
+    content: url('Serbia_Flag.png');
+    vertical-align: -50%;
+    padding: 0 5px 0 0;
+}
+
+
+/*.check-boxes {
+    box-shadow: 1px, 1px, 1px, lightgrey, inset;
+}*/

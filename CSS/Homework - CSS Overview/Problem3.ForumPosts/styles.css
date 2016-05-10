@@ -1,0 +1,48 @@
+body {
+    background-color: #A9A9A9
+}
+
+header {
+    color: #F1F1CD;
+}
+
+ul {
+    list-style-type: none;
+    align-content: center;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+p a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+.current {
+    background-color: lightgrey;
+}
+
+li:last-of-type {
+    text-decoration: underline;
+}
+
+section article p {
+    text-align: justify;
+}
+
+header,
+footer {
+    text-align: center;
+}
+
+section article header h1,
+section article footer {
+    text-align: left;
+}

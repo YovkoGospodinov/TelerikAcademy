@@ -1,0 +1,45 @@
+body {
+    background-color: #595959;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+h1 {
+    color: #888888
+}
+
+#nosupport {
+    color: red
+}
+
+#notanswered {
+    color: orange
+}
+
+.publicinfo {
+    color: #f9ee98
+}
+
+#name:before {
+    content: url('GreenButton.png');
+}
+
+.activity {
+    color: #888888
+}
+
+dt {
+    float: left;
+    width: 150px;
+    color: white;
+    font-style: italic;
+    padding: 5px;
+}
+
+dd {
+    margin-left: 160px;
+    padding: 5px;
+}
+
+dd p {
+    text-align: left;
+}
