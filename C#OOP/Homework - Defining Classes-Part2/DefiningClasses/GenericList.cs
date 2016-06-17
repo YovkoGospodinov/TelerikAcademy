@@ -2,34 +2,34 @@
 {
     using System;
 
-    public class GenericList<T>
+    public class GenericList<T> where T: IComparable<T>
     {
         #region Fields
         private T[] elements;
-        private int size;
-        private int index;
+        //private int size;
+        private int position;
         #endregion
 
         #region Constructors
         public GenericList(int size)
         {
             this.elements = new T[size];
-            this.Size = size;
+            //this.Size = size;
         }
         #endregion
 
         #region Properties
-        public int Size
-        {
-            get
-            {
-                return this.size;
-            }
-            set
-            {
-                this.size = value;
-            }
-        }
+        //public int Size
+        //{
+        //    get
+        //    {
+        //        return this.size;
+        //    }
+        //    set
+        //    {
+        //        this.size = value;
+        //    }
+        //}
         #endregion
 
         #region Methods
@@ -38,7 +38,7 @@
         {
             get
             {
-                if (this.index < 0 || this.index >= this.elements.Length)
+                if (this.position < 0 || this.position >= this.elements.Length)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
@@ -47,7 +47,7 @@
             }
             private set
             {
-                if (this.index < 0 || this.index >= this.elements.Length)
+                if (this.position < 0 || this.position >= this.elements.Length)
                 {
                     throw new ArgumentOutOfRangeException();
                 }
@@ -58,11 +58,11 @@
 
         public void AddElement(T element)
         {
-            this.elements[index] = element;
-            this.index++;
+            this.elements[position] = element;
+            this.position++;
             
             //Double increasing the lenght of the array
-            if (this.index == this.elements.Length)
+            if (this.position == this.elements.Length)
             {
                 var newElements = new T[2 * this.elements.Length];
 
@@ -78,30 +78,31 @@
         public void ClearElements()
         {
             this.elements = new T[this.elements.Length];
-            this.index = 0;
+            this.position = 0;
         }
 
         public void RemoveElement(int index)
         {
-            for (int i = index; (i < this.index) && (i < this.elements.Length - 1); i++)
+            for (int i = index; (i < this.position) && (i < this.elements.Length - 1); i++)
             {
                 this.elements[i] = this.elements[i + 1];
             }
-            this.index--;
+            this.position--;
+            this.elements[position] = default(T);
         }
 
         public void InsertElement(int index, T element)
         {
-            if (this.index == this.elements.Length)
+            if (this.position == this.elements.Length)
             {
                 throw new IndexOutOfRangeException();
             }
-            for (int i = this.index + 1; i >= index ; i--)
+            for (int i = this.position + 1; i >= index ; i--)
             {
                 this.elements[i] = this.elements[i - 1];
             }
             this.elements[index] = element;
-            this.index++;
+            this.position++;
         }
 
         public T GetElement(int index)
@@ -114,6 +115,47 @@
             return string.Join(", ", this.elements);
         }
 
+        public T GetMinEl()
+        {
+            var min = this.elements[0];
+
+            if (this.elements.Length == 0)
+            {
+                throw new ArgumentException("The GenericList does not contains elements!");
+            }
+
+            for (int i = 1; i < this.elements.Length; i++)
+            {
+                var temp = this.elements[i];
+                if (min.CompareTo(temp) > 0)
+                {
+                    min = temp;
+                }
+            }
+
+            return min;
+        }
+
+        public T GetMaxEl()
+        {
+            var max = this.elements[0];
+
+            if (this.elements.Length == 0)
+            {
+                throw new ArgumentException("The GenericList does not contains elements!");
+            }
+
+            for (int i = 1; i < this.elements.Length; i++)
+            {
+                var temp = this.elements[i];
+                if (max.CompareTo(temp) < 0)
+                {
+                    max = temp;
+                }
+            }
+
+            return max;
+        }
         #endregion
     }
 }

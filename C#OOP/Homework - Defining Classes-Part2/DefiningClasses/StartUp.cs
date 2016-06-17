@@ -56,6 +56,12 @@
             //Get element at index
             Console.WriteLine(list.GetElement(1));
 
+            //Get min element
+            Console.WriteLine(list.GetMinEl());
+
+            //Get max element
+            Console.WriteLine(list.GetMaxEl());
+
             //Clear the list
             list.ClearElements();
 
