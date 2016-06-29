@@ -1,30 +1,12 @@
-// function solve(args) {
-//     var input = args[0].split("\n");
-//     var arrayLength = +input[0];
-//     var array = input[1].split(" ").map(Number);
-
-//     array.sort();
-
-//     console.log(array.join(" "));
-// }
-
-
 function solve(args) {
-    var arr = args[0].split('\n'),
-        n = +arr[0],
-        numbers = arr[1].split(' ').map(Number);
+    var arrayLength = +args[0];
+    var array = args[1].split(" ").map(Number);
 
-    function compareForSort(first, second) {
-        if (first == second)
-            return 0;
-        if (first < second)
-            return -1;
-        else
-            return 1;
-    }
+    var sortedArray = array.sort(function(a, b) {
+        return a - b;
+    });
 
-    numbers.sort(compareForSort);
-    console.log(numbers.join(' '));
+    return sortedArray.join(" ");
 }
 
 //solve(['6\n3 4 1 5 2 6']);
