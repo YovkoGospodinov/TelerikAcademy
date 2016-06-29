@@ -1,12 +1,11 @@
 function solve(args) {
-    var input = args[0].split("\n");
-    var arrayLength = +input[0];
-    var array = input[1].split(" ").map(Number);
+    var arrayLength = +args[0];
+    var numbers = args[1].split(" ").map(Number);
 
     var count = 0;
 
-    for(var i = 1; i < arrayLength - 1; i += 1) {
-        if (array[i] > array[i - 1] && array[i] > array[i + 1]) {
+    for (var i = 1; i < arrayLength - 1; i += 1) {
+        if (numbers[i] > numbers[i - 1] && numbers[i] > numbers[i + 1]) {
             count += 1;
         }
     }
