@@ -4,13 +4,16 @@
 
     public class School
     {
-        private IList<Student> students;
-        private IList<Course> courses;
+        private List<Student> students;
+        private List<Course> courses;
 
         public School()
         {
             this.students = new List<Student>();
             this.courses = new List<Course>();
         }
+
+        public List<Student> Students => this.students;
+        public List<Course> Courses => this.courses;
     }
 }
