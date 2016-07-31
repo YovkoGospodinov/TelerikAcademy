@@ -35,8 +35,11 @@
                 var student = new Student(i.ToString(), i.ToString());
                 course.AddStudent(student);
             }
+
+            //Using MSTestExtensions
+            //ThrowsAssert.Throws<ArgumentOutOfRangeException>(() => course.AddStudent(student));
         }
-        
+
         [TestMethod]
         public void TestShouldCheckIfMethodAddStudentToCourse()
         {
