@@ -24,7 +24,7 @@
 
             private set
             {
-                if (value.Count == MAX_STUDENTS_IN_COURSE)
+                if (students.Count > MAX_STUDENTS_IN_COURSE)
                 {
                     throw new ArgumentOutOfRangeException("Total number of students in the course must be less than 30. The current number of students in the course is 29, you can not add more students.");
                 }
@@ -34,6 +34,11 @@
 
         public void AddStudent(Student student)
         {
+            if (students.Count > MAX_STUDENTS_IN_COURSE)
+            {
+                throw new ArgumentOutOfRangeException("Total number of students in the course must be less than 30. The current number of students in the course is 29, you can not add more students.");
+            }
+
             Students.Add(student);
         }
 
