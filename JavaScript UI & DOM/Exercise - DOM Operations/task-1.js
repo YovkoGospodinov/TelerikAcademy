@@ -30,10 +30,13 @@ function solve() {
         var div = document.createElement("div");
 
         for (var j = 0; j < contents.length; j += 1) {
-            var el = contents[j];
-            var divToAdd = div.cloneNode(true);
-            divToAdd.innerHTML = el;
-            docFrag.appendChild(divToAdd);
+            div.innerHTML = contents[j];
+            docFrag.appendChild(div.cloneNode(true));
+						
+			//var el = contents[j];
+            //var divToAdd = div.cloneNode(true);
+            //divToAdd.innerHTML = el;
+            //docFrag.appendChild(divToAdd);
         }
 
         element.appendChild(docFrag);
