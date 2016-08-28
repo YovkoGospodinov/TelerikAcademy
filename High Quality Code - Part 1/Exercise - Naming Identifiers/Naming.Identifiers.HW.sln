@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1.Print.Manager", "Task1.Print.Manager\Task1.Print.Manager.csproj", "{41095F14-AE7B-4175-B5C9-6B8C84D707C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2.Person.Maker", "Task2.Person.Maker\Task2.Person.Maker.csproj", "{E1D08B1F-3740-4A9A-B285-1F022E545136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4.Mines", "Task4.Mines\Task4.Mines.csproj", "{0A399E55-0ED7-4914-9706-0D6441D19671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41095F14-AE7B-4175-B5C9-6B8C84D707C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41095F14-AE7B-4175-B5C9-6B8C84D707C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41095F14-AE7B-4175-B5C9-6B8C84D707C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41095F14-AE7B-4175-B5C9-6B8C84D707C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1D08B1F-3740-4A9A-B285-1F022E545136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D08B1F-3740-4A9A-B285-1F022E545136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D08B1F-3740-4A9A-B285-1F022E545136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D08B1F-3740-4A9A-B285-1F022E545136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A399E55-0ED7-4914-9706-0D6441D19671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A399E55-0ED7-4914-9706-0D6441D19671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A399E55-0ED7-4914-9706-0D6441D19671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A399E55-0ED7-4914-9706-0D6441D19671}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
