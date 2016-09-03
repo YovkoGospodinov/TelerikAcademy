@@ -5,13 +5,21 @@ function solve() {
         var books = [];
         var categories = [];
 
-        function listBooks() {
+        function listBooks(searchedParameter) {
 
             books.sort(function(firstBook, secondBook) {
-                return firstBook.Id - secondBook.ID;
+                return firstBook.id - secondBook.id;
             });
 
-            return books;
+            if (searchedParameter === undefined) {
+                return books;
+            } else if (searchedParameter.author) {
+                return books.filter((book) => book.author === searchedParameter.author);
+            } else if (searchedParameter.category) {
+                return books.filter((book) => book.category === searchedParameter.category);
+            } else {
+                return books;
+            }
         }
 
         function addBook(book) {
@@ -19,8 +27,8 @@ function solve() {
 
             isBookInfoValid(book);
 
-            if (!isCategoryExist(book.Category)) {
-                categories.push(book.Category);
+            if (!isCategoryExist(book.category)) {
+                categories.push(book.category);
             }
 
             books.push(book);
@@ -30,103 +38,116 @@ function solve() {
 
         function listCategories() {
 
-            if (categories.length === 0) {
-                throw new Error("Error");
-            }
-
             categories.sort(function(firstCategory, secondCategory) {
-                return firstCategory.ID - secondCategory.ID;
+                return firstCategory.id - secondCategory.id;
             });
 
             return categories;
         }
 
         function isCategoryExist(category) {
-            categories.forEach((currentCategory) => {
-                if (currentCategory === category) {
-                    return false;
-                }
+            if (categories.indexOf(category) < 0) {
+                return false;
+            }
+            return true;
 
-                return true;
-            });
+            // categories.forEach((currentCategory) => {
+            //     if (currentCategory === category) {
+            //         return true;
+            //     }
+            // });
+
+            // return false;
         }
 
         function isBookInfoValid(book) {
 
-            // if (book.isbn.length !== 10 || book.isbn.length !== 13) {
-            //     throw new Error("Error");
-            // }
+            if (book.isbn.length !== 10 && book.isbn.length !== 13) {
+                throw new Error("Error");
+            }
 
-            // if (book.author.length === 0) {
-            //     throw new Error("Error");
-            // }
+            if (book.author.length === 0) {
+                throw new Error("Error");
+            }
 
-            // if (book.title.length < 3 || book.title.length > 100) {
-            //     throw new Error("Error");
-            // }
+            if (book.title.length < 3 || book.title.length > 100) {
+                throw new Error("Error");
+            }
 
             // if (!isStringContainsValidSymbols(book.title)) {
             //     throw new Error("Error");
             // }
 
-            // if (book.category.length < 3 || book.category.length > 100) {
-            //     throw new Error("Error");
-            // }
+            if (book.category.length < 3 || book.category.length > 100) {
+                throw new Error("Error");
+            }
 
             // if (!isStringContainsValidSymbols(book.category)) {
             //     throw new Error("Error");
             // }
 
-            // if (!isBookIsbnUnique(book.isbn)) {
-            //     throw new Error("Error");
-            // }
-
-            // if (!isBookTitleUniqe(book.title)) {
-            //     throw new Error("Error");
-            // }
-            let isBookIsbnLengthValid = book.isbn.length === 10 || book.isbn.length === 13;
-            let isBookAuthorValid = book.author.length !== 0;
-            let isBookTitleLengthValid = isStringLengthValid(book.title.length);
-            let isBookTitleSymbolsValid = isStringContainsValidSymbols(book.title);
-            let isBookCategoryLengthValid = isStringLengthValid(book.category.length);
-            let isBookCategorySymbolsValid = isStringContainsValidSymbols(book.category);
-            let isIsbnUnique = isBookIsbnUnique(book.isbn);
-            let isTitleUnique = isBookTitleUniqe(book.title);
-
-            if (isBookIsbnLengthValid && isBookAuthorValid &&
-                isBookTitleLengthValid && isBookTitleSymbolsValid &&
-                isBookCategoryLengthValid && isBookCategorySymbolsValid &&
-                isIsbnUnique && isTitleUnique) {
-                return true;
-            } else {
-                return false;
+            if (isBookIsbnExist(book.isbn)) {
+                throw new Error("Error");
             }
 
-            // return true;
+            if (isBookTitleExist(book.title)) {
+                throw new Error("Error");
+            }
+            // let isBookIsbnLengthValid = book.isbn.length === 10 || book.isbn.length === 13;
+            // let isBookAuthorValid = book.author.length !== 0;
+            // let isBookTitleLengthValid = isStringLengthValid(book.title.length);
+            // let isBookTitleSymbolsValid = isStringContainsValidSymbols(book.title);
+            // let isBookCategoryLengthValid = isStringLengthValid(book.category.length);
+            // let isBookCategorySymbolsValid = isStringContainsValidSymbols(book.category);
+            // let isIsbnUnique = isBookIsbnUnique(book.isbn);
+            // let isTitleUnique = isBookTitleUniqe(book.title);
+
+            // if (isBookIsbnLengthValid && isBookAuthorValid &&
+            //     isBookTitleLengthValid && isBookTitleSymbolsValid &&
+            //     isBookCategoryLengthValid && isBookCategorySymbolsValid &&
+            //     isIsbnUnique && isTitleUnique) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+
+            return true;
         }
 
-        function isBookTitleUniqe(title) {
-            books.forEach(book => {
-                if (book.Title === title) {
-                    return false;
+        function isBookTitleExist(title) {
+            // books.forEach((book) => {
+            //     if (book.title === title) {
+            //         return true;
+            //     }
+            // });
+            // return false;
+
+            for (let book of books) {
+                if (book.title === title) {
+                    return true;
                 }
-
-                return true;
-            });
+            }
+            return false;
         }
 
-        function isBookIsbnUnique(isbn) {
-            books.forEach(book => {
+        function isBookIsbnExist(isbn) {
+            // books.forEach(book => {
+            //     if (book.isbn === isbn) {
+            //         return true;
+            //     }
+            // });
+            // return false;
+
+            for (let book of books) {
                 if (book.isbn === isbn) {
-                    return false;
+                    return true;
                 }
-
-                return true;
-            });
+            }
+            return false;
         }
 
         function isStringLengthValid(input) {
-            let isLengthValid = input > 2 && input < 100;
+            let isLengthValid = input > 3 && input < 100;
 
             return isLengthValid;
         }
@@ -153,18 +174,30 @@ function solve() {
     return library;
 }
 
-// console.log(solve().addBook({
-//     title: 'B',
+// var f = solve();
+// f.books.add({
+//     title: 'Ivan',
+//     isbn: '1234567890',
+//     author: 'John Doe',
+//     category: 'Coding'
+// });
+
+// f.books.add({
+//     title: 'Gosho',
 //     isbn: '1234567890',
 //     author: 'John Doe',
 //     category: 'Book Category'
-// }));
+// });
 
-// var f = solve();
-// console.log(f.addBook({
-//     title: 'B',
+// f.books.add({
+//     title: 'Ivan',
 //     isbn: '1234567890',
 //     author: 'John Doe',
+//     category: 'Coding'
+// });
+
+
+// console.log(f.books.list({
 //     category: 'Book Category'
 // }));
 
