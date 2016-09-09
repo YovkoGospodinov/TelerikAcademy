@@ -39,6 +39,125 @@ function solve() {
         }
     }
 
+    class Player {
+        constructor(name) {
+            this.name = name;
+            this._entries = [];
+        }
+
+        get size() {
+            return this._entries.length;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            Validator.validateString(value);
+            this._name = value;
+        }
+
+        addPlaylist(input) {
+            Validator.validateObject(input);
+            if (input instanceof Playlist) { //obj.constructor.name
+                this._entries.push(input);
+            } else {
+                throw new Error("You can add only playlist to the player.")
+            }
+
+            return this;
+        }
+
+        getPlaylistById(id) {
+            Validator.validateNumber(id);
+
+            let searchedPlaylist;
+
+            this._entries.forEach((entry) => {
+                if (entry.id === id) {
+                    searchedPlaylist = entry;
+                }
+            });
+
+            if (searchedPlaylist !== undefined) {
+                return searchedPlaylist;
+            } else {
+                return null;
+            }
+        }
+
+        removePlaylist(playlist) {
+            let searchedId;
+
+            if (playlist instanceof Playlist) {
+                searchedId = playlist.id;
+            }
+
+            if (searchedId !== undefined) {
+                this._entries = this._entries.filter(function(entry) {
+                    return entry.id !== searchedId;
+                });
+            } else {
+                throw new Error("Playlist with this id does not exist in the player.");
+            }
+
+            return this;
+        }
+
+        listPlaylists(page, size) {
+            let COUNT_OF_PLAYABLE_IN_PLAYLIST = this._entries.length;
+            let neededPlaylists = [];
+
+            if (page * size > COUNT_OF_PLAYABLE_IN_PLAYLIST) {
+                throw new Error("Maximum size exceded");
+            }
+
+            if (page < 0) {
+                throw new Error("Page you are trying to reach must be equal or greater than 0.");
+            }
+
+            if (size <= 0) {
+                throw new Error("Size of the page must be positive number.");
+            }
+
+            this._entries.sort(function(a, b) {
+                if (a.name < b.name) {
+                    return -1;
+                } else if (a.title > b.title) {
+                    return 1;
+                } else {
+                    return a.id - b.id;
+                }
+            });
+
+            this._entries.forEach((entry) => {
+                console.log(entry.play());
+            });
+
+            if (COUNT_OF_PLAYABLE_IN_PLAYLIST <= size) {
+                neededPlaylists = this._entries;
+            } else {
+                let startIndex = (page) * size;
+                let endIndex = startIndex + size;
+                if (startIndex + size > COUNT_OF_PLAYABLE_IN_PLAYLIST) {
+                    endIndex = COUNT_OF_PLAYABLE_IN_PLAYLIST;
+                }
+
+                for (let i = startIndex; i < endIndex; i += 1) {
+                    neededPlaylists.push(this._entries[i]);
+                }
+            }
+
+            neededPlaylists.forEach((entry) => {
+                console.log(entry.play());
+            });
+
+            //return neededPlaylists;
+        }
+
+    }
+
     class Playlist {
         constructor(name) {
             this._id = getId();
@@ -138,9 +257,9 @@ function solve() {
                 }
             });
 
-            this._entries.forEach((entry) => {
-                console.log(entry.play());
-            });
+            // this._entries.forEach((entry) => {
+            //     console.log(entry.play());
+            // });
 
             if (COUNT_OF_PLAYABLE_IN_PLAYLIST <= size) {
                 neededPlayable = this._entries;
@@ -156,11 +275,11 @@ function solve() {
                 }
             }
 
-            neededPlayable.forEach((entry) => {
-                console.log(entry.play());
-            });
+            // neededPlayable.forEach((entry) => {
+            //     console.log(entry.play());
+            // });
 
-            //return neededPlayable;
+            return neededPlayable;
         }
     }
 
