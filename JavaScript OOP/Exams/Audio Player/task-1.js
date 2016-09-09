@@ -41,8 +41,13 @@ function solve() {
 
     class Player {
         constructor(name) {
+            this._id = getId();
             this.name = name;
             this._entries = [];
+        }
+
+        get id() {
+            return this._id;
         }
 
         get size() {
@@ -131,9 +136,9 @@ function solve() {
                 }
             });
 
-            this._entries.forEach((entry) => {
-                console.log(entry.play());
-            });
+            // this._entries.forEach((entry) => {
+            //     console.log(entry.play());
+            // });
 
             if (COUNT_OF_PLAYABLE_IN_PLAYLIST <= size) {
                 neededPlaylists = this._entries;
@@ -149,13 +154,26 @@ function solve() {
                 }
             }
 
-            neededPlaylists.forEach((entry) => {
-                console.log(entry.play());
-            });
+            // neededPlaylists.forEach((entry) => {
+            //     console.log(entry.play());
+            // });
 
-            //return neededPlaylists;
+            return neededPlaylists;
         }
 
+        contains(playable, playlist) {
+            Validator.validateObject(playable);
+            Validator.validateObject(playlist);
+            let searchedPlaylistId = playlist.id;
+            let searchedPlaylist = this.getPlaylistById(searchedPlaylistId);
+            let searchedPlayableId = playable.id;
+
+            if (searchedPlaylist.getPlayableById(searchedPlayableId)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     class Playlist {
@@ -183,10 +201,10 @@ function solve() {
         }
 
         addPlayable(input) {
-            Validator.validateObject(input);
-            if (input instanceof Playable) { //obj.constructor.name
-                this._entries.push(input);
-            }
+            // Validator.validateObject(input);
+            // if (input instanceof Playable) { //obj.constructor.name
+            this._entries.push(input);
+            // }
 
             return this;
         }
@@ -358,7 +376,7 @@ function solve() {
     }
 
     function getPlayer(name) {
-        // returns a new player instance with the provided name
+        return new Player(name);
     }
 
     function getPlaylist(name) {
@@ -376,52 +394,4 @@ function solve() {
     return { getPlayer, getPlaylist, getAudio, getVideo };
 }
 
-//module.exports(solve);
-
-let player = solve();
-
-let techno1 = player.getAudio("Jaguar", "Ben Sims", 55.05);
-
-let audio = player.getAudio("Komm", "Sven Vath", 3.45);
-// console.log(audio.play());
-
-let video = player.getVideo("Pod Prikritie 3", "BNT", 720);
-// console.log(video.play());
-
-let techno = player.getAudio("Jaguar", "Mauro Piccoto", 55.05);
-
-let popFolk = player.getAudio("Kokoroko", "Unknown", 5.43);
-let bg = player.getAudio("Chereshi", "Tonika", 2.34);
-let pop = player.getAudio("Lover", "Madonna", 3.13);
-
-
-let playList = player.getPlaylist("new playList");
-
-playList.addPlayable(bg);
-playList.addPlayable(audio);
-playList.addPlayable(video);
-playList.addPlayable(techno);
-playList.addPlayable(techno1);
-playList.addPlayable(pop);
-playList.addPlayable(popFolk);
-
-
-// console.log(playList.getPlayableById(1));
-// console.log(playList.getPlayableById(2));
-
-// playList.removePlayable(1);
-
-// console.log(playList.getPlayableById(1));
-// playList.removePlayable(1);
-
-// playList.removePlayable(1).removePlayable(2);
-
-// console.log(playList.getPlayableById(1));
-// console.log(playList.getPlayableById(2));
-
-// playList.removePlayable(video).removePlayable(1).removePlayable("ewewe");
-
-// console.log(playList.getPlayableById(1));
-// console.log(playList.getPlayableById(2));
-
-playList.listPlayables(2, 3);
+module.exports = solve;
