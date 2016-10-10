@@ -1,0 +1,166 @@
+{
+  "users": [
+    {
+      "username": "Minkov",
+      "passHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "usernameToLower": "minkov",
+      "id": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+      "authKey": "16655985-e510-43d4-ad1c-2388c76d1ef6FwHCPd*bP:.;Fu&:evl)RPGg"
+    },
+    {
+      "username": "Minkov3",
+      "passHash": "1234567890123456789012345678901234567890",
+      "usernameToLower": "minkov3",
+      "id": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73",
+      "authKey": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73erxSIAJyVOzIEIrpMFbanscO"
+    },
+    {
+      "username": "Ivan",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "ivan",
+      "id": "fa058107-6a8f-4e83-a851-732e14c5e227",
+      "authKey": "fa058107-6a8f-4e83-a851-732e14c5e227gbbTBCYodhAClIXVkKcAjgXH"
+    },
+    {
+      "username": "Koko",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "koko",
+      "id": "ff54c039-a2ef-43c1-ad37-e367f7d6f671",
+      "authKey": "ff54c039-a2ef-43c1-ad37-e367f7d6f671WScAsamRAHecWWsMhWhptOhL"
+    },
+    {
+      "username": "Kiko",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "kiko",
+      "id": "33f56b17-f51e-43ef-a4e5-f3089d0fe348"
+    },
+    {
+      "username": "Kiro",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "kiro",
+      "id": "8f8b9a4f-b0c6-4139-9b6b-52b58e18c3e7"
+    },
+    {
+      "username": "Kodi",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "kodi",
+      "id": "a7270754-c359-4290-b0ed-6492ebaaafeb"
+    },
+    {
+      "username": "Miki",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "miki",
+      "id": "aeebe534-c9e1-4029-b706-98e4415a3116",
+      "authKey": "aeebe534-c9e1-4029-b706-98e4415a3116hmillfzGiuVOXXBnsOMjMXby"
+    },
+    {
+      "username": "Dino",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "dino",
+      "id": "bb5df515-8dfa-45a0-b494-67323d69181a",
+      "authKey": "bb5df515-8dfa-45a0-b494-67323d69181aiMoASuCptPEamfUkwnrqwMOY"
+    },
+    {
+      "username": "Lolo",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "lolo",
+      "id": "32a8c7c9-1958-4f4b-9f2e-f1600337bfb4"
+    },
+    {
+      "username": "Popo",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "popo",
+      "id": "03e64fb8-f6f8-4e50-b7da-8eb11489268d",
+      "authKey": "03e64fb8-f6f8-4e50-b7da-8eb11489268dtEqbmdIqklzBvWZIZbPnzEna"
+    },
+    {
+      "username": "Pipo",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "pipo",
+      "id": "e5abdb65-3444-43ef-b17f-6d1a1eb4948a",
+      "authKey": "e5abdb65-3444-43ef-b17f-6d1a1eb4948abTlnWfakDmpZZxuxiKewFYxP"
+    },
+    {
+      "username": "Ivanka",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "ivanka",
+      "id": "fa3ccd4e-0fd3-4e62-a542-9fa6c259997e",
+      "authKey": "fa3ccd4e-0fd3-4e62-a542-9fa6c259997ehWIDMARhwUXsuRchwmYhGAXa"
+    },
+    {
+      "username": "lili",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "lili",
+      "id": "6ed53ab1-ea4a-4031-92b4-43feed836fbb",
+      "authKey": "6ed53ab1-ea4a-4031-92b4-43feed836fbbPaEsEXVNgjVeUWWrMvCOEUPK"
+    },
+    {
+      "username": "Kolio",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "kolio",
+      "id": "96c5c9b1-53f5-40b5-a74e-9fc9df2b22af",
+      "authKey": "96c5c9b1-53f5-40b5-a74e-9fc9df2b22afmuGcbCKlUtAfvIjmqFGEEKLs"
+    },
+    {
+      "username": "Poi",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "poi",
+      "id": "1d4e5697-61e7-4149-abf8-5d4f489a0eb5",
+      "authKey": "1d4e5697-61e7-4149-abf8-5d4f489a0eb5ovDTfZWMTLtiDRpdhCfmUgBU"
+    },
+    {
+      "username": "MKI",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "mki",
+      "id": "746bde90-2f23-4c29-acdf-90633e954de5",
+      "authKey": "746bde90-2f23-4c29-acdf-90633e954de5oYpLLoqLskLiwlIqxmvycKGZ"
+    },
+    {
+      "username": "Penka",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "penka",
+      "id": "2aae622d-5a9c-4be5-8b98-e503d87f82ec",
+      "authKey": "2aae622d-5a9c-4be5-8b98-e503d87f82eceyUwOaNDCxbZIvjsMZcZgJht"
+    },
+    {
+      "username": "Penio",
+      "passHash": "7110eda4d09e062aa5e4a390b0a572ac0d2c0220",
+      "usernameToLower": "penio",
+      "id": "fead2761-eb5b-4016-8fd7-3d61c2864f90",
+      "authKey": "fead2761-eb5b-4016-8fd7-3d61c2864f90fFYKTWKhqJBSAkbTMpowxkCh"
+    }
+  ],
+  "cookies": [
+    {
+      "text": "Test",
+      "category": "Home",
+      "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+      "likes": 10,
+      "dislikes": 15,
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "shareDate": "2015-09-09T14:53:30.290Z",
+      "id": "2dae28aa-ee64-4bc1-8591-29284d88c9e9"
+    },
+    {
+      "text": "May the Force with you",
+      "category": "WOrk",
+      "userId": "16655985-e510-43d4-ad1c-2388c76d1ef6",
+      "likes": 16,
+      "dislikes": 0,
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "shareDate": "2015-09-09T14:53:56.482Z",
+      "id": "e2fdbf82-54c3-488f-add4-9af3262c2572",
+      "hours": 9
+    },
+    {
+      "text": "Hello!",
+      "category": "Home",
+      "userId": "bd04b3b8-5586-47ad-bf8f-db6c531dbb73",
+      "likes": 11,
+      "dislikes": 9,
+      "img": "https://dayinthelifeofapurpleminion.files.wordpress.com/2014/12/batman-exam.jpg",
+      "shareDate": "2015-09-10T06:24:18.743Z",
+      "id": "ea91a233-bcf3-48b6-933f-05857f4aea87"
+    }
+  ]
+}
