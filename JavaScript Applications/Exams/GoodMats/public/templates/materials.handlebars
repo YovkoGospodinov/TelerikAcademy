@@ -1,0 +1,11 @@
+<h2>Materials</h2>
+
+{{#each this}}
+<h3><strong>Title: {{title}}</strong></h3>
+<p><strong>Description: {{description}}</strong></p>
+{{#if img}}
+<img src="{{img}}" />
+{{/if}}
+<p>Number of comments: {{commentsCount}}</p>
+<p>Created by: {{user.username}}</p>
+{{/each}}
