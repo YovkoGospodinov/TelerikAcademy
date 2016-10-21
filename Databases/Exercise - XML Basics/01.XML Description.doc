@@ -1,0 +1,10 @@
+XML stands for EXtensible Markup Language.
+XML was designed to store and transport data it is a software and hardware independent tool.
+XML was designed to be both human and machine readable.
+The XML language has no predefined tags.
+XML does not carry any information about how to be displayed.
+The same XML data can be used in many different presentation scenarios.
+Because of this, with XML, there is a full separation between data and presentation.
+XML stores data in plain text format. This provides a software and hardware independent way of storing, transporting, and sharing data.
+XML also makes it easier to expand or upgrade to new operating systems, new applications, or new browsers, without losing data.
+With XML, data can be available to all kinds of "reading machines" like people, computers, voice machines, news feeds, etc.
