@@ -42,6 +42,7 @@
         </xs:element>
       </xs:sequence>
       <xs:attribute name="faculty" type="xs:string" use="required" />
+      <xs:attribute name="xlmns" type="xs:string" use="required" />
     </xs:complexType>
   </xs:element>
 </xs:schema>

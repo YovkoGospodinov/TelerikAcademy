@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<students faculty="https://www.fmi.uni-sofia.bg">
+<students faculty="Faculty of Mathematics and Informatics"
+          xlmns="https://www.fmi.uni-sofia.bg">
     <student>
         <name>
             <firstname>Kiro</firstname>
