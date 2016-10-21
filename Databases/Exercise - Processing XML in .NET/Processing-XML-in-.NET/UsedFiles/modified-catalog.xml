@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<albums name="Albums Catalog" xmlns:album="urn:albums">
+  <album>
+    <name>THE BEAT</name>
+    <artist>Sam Paganini</artist>
+    <year>2016</year>
+    <producer>Drumcode</producer>
+    <price>7.80</price>
+    <songs>
+      <song>
+        <title>Surrender</title>
+        <duration>6:04</duration>
+      </song>
+      <song>
+        <title>Mega</title>
+        <duration>5:52</duration>
+      </song>
+      <song>
+        <title>The Beat</title>
+        <duration>7:49</duration>
+      </song>
+      <song>
+        <title>Flow</title>
+        <duration>6:10</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>ARGO and NORSE</name>
+    <artist>Andre Winter</artist>
+    <year>2016</year>
+    <producer>Senso Sounds</producer>
+    <price>3.12</price>
+    <songs>
+      <song>
+        <title>Argo</title>
+        <duration>6:31</duration>
+      </song>
+      <song>
+        <title>Norse</title>
+        <duration>7:47</duration>
+      </song>
+    </songs>
+  </album>
+  <album>
+    <name>PARADOX EP</name>
+    <artist>Shlomi Aber</artist>
+    <year>2016</year>
+    <producer>Be As One</producer>
+    <price>6.51</price>
+    <songs>
+      <song>
+        <title>Paradox Original Mix</title>
+        <duration>5:51</duration>
+      </song>
+      <song>
+        <title>Paradox Markus Suckut Remix</title>
+        <duration>6:56</duration>
+      </song>
+      <song>
+        <title>Monday Paranoia</title>
+        <duration>5:53</duration>
+      </song>
+    </songs>
+  </album>
+</albums>
