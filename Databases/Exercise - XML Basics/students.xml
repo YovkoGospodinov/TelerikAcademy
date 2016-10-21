@@ -1,66 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <students faculty="Faculty of Mathematics and Informatics"
-          xlmns="https://www.fmi.uni-sofia.bg">
-    <student>
-        <name>
-            <firstname>Kiro</firstname>
-            <lastname>Kirov</lastname>
-        </name>
-        <gender>Male</gender>
-        <birthdate>10/09/1992</birthdate>
-        <phone>0987123124</phone>
-        <email>k.kirov@mail.bg</email>
-        <course>ASP.NET MVC</course>
-        <specialty>Web Development</specialty>
-        <faculty>Informatics</faculty>
-        <facultynumber>1000122</facultynumber>
-        <takenexams>
-            <exam>
-                <name>Introduction to programming</name>
-                <tutor>Prof. Anton Petkov</tutor>
-                <score>5</score>
-            </exam>
-            <exam>
-                <name>Object-oriented programming</name>
-                <tutor>Prof. Dimitar Birov</tutor>
-                <score>6</score>
-            </exam>
-            <exam>
-                <name>Data structures and algorithms</name>
-                <tutor>Prof. Krassen Stefanov</tutor>
-                <score>6</score>
-            </exam>
-        </takenexams>
-    </student>
-    <student>
-        <name>
-            <firstname>Miroslav</firstname>
-            <lastname>Kostadinov</lastname>
-        </name>
-        <gender>Male</gender>
-        <birthdate>02/01/1993</birthdate>
-        <phone>0987156724</phone>
-        <email>m.kostadinov@abv.bg</email>
-        <course>JS APPS</course>
-        <specialty>Software Engineering</specialty>
-        <faculty>Informatics</faculty>
-        <facultynumber>1000432</facultynumber>
-        <takenexams>
-            <exam>
-                <name>Operating systems</name>
-                <tutor>Dimitar Petrov</tutor>
-                <score>6</score>
-            </exam>
-            <exam>
-                <name>Databases</name>
-                <tutor>Prof. Maria Nisheva</tutor>
-                <score>6</score>
-            </exam>
-            <exam>
-                <name>Markup Languages (XML)</name>
-                <tutor>Prof. Kalin Nikolov</tutor>
-                <score>6</score>
-            </exam>
-        </takenexams>
-    </student>
+          xmlns:student="urn:students">
+  <student>
+    <name>
+      <firstname>Kiro</firstname>
+      <lastname>Kirov</lastname>
+    </name>
+    <gender>Male</gender>
+    <birthdate>10/09/1992</birthdate>
+    <phone>0987123124</phone>
+    <email>k.kirov@mail.bg</email>
+    <course>ASP.NET MVC</course>
+    <specialty>Web Development</specialty>
+    <faculty>Informatics</faculty>
+    <facultynumber>1000122</facultynumber>
+    <enrollmentdate>
+      <date>09/15/2015</date>
+      <examscore>4</examscore>
+    </enrollmentdate>
+    <teacherendorsements>Earth and Space Science</teacherendorsements>
+    <takenexams>
+      <exam>
+        <name>Introduction to programming</name>
+        <tutor>Prof. Anton Petkov</tutor>
+        <score>5</score>
+      </exam>
+      <exam>
+        <name>Object-oriented programming</name>
+        <tutor>Prof. Dimitar Birov</tutor>
+        <score>6</score>
+      </exam>
+      <exam>
+        <name>Data structures and algorithms</name>
+        <tutor>Prof. Krassen Stefanov</tutor>
+        <score>6</score>
+      </exam>
+    </takenexams>
+  </student>
+  <student>
+    <name>
+      <firstname>Miroslav</firstname>
+      <lastname>Kostadinov</lastname>
+    </name>
+    <gender>Male</gender>
+    <birthdate>02/01/1993</birthdate>
+    <phone>0987156724</phone>
+    <email>m.kostadinov@abv.bg</email>
+    <course>JS APPS</course>
+    <specialty>Software Engineering</specialty>
+    <faculty>Informatics</faculty>
+    <facultynumber>1000432</facultynumber>
+    <enrollmentdate>
+      <date>09/15/2016</date>
+      <examscore>5</examscore>
+    </enrollmentdate>
+    <teacherendorsements>Social Studies</teacherendorsements>
+    <takenexams>
+      <exam>
+        <name>Operating systems</name>
+        <tutor>Dimitar Petrov</tutor>
+        <score>6</score>
+      </exam>
+      <exam>
+        <name>Databases</name>
+        <tutor>Prof. Maria Nisheva</tutor>
+        <score>6</score>
+      </exam>
+      <exam>
+        <name>Markup Languages (XML)</name>
+        <tutor>Prof. Kalin Nikolov</tutor>
+        <score>6</score>
+      </exam>
+    </takenexams>
+  </student>
 </students>
