@@ -37,6 +37,7 @@ namespace _09.TraverseDirectory
                     writer.WriteElementString("name", file.Name);
                     writer.WriteEndElement();
                 }
+
                 writer.WriteEndElement();
             }
             catch (IOException)
