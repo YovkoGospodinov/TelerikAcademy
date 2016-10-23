@@ -1,0 +1,9 @@
+{
+  "name": "Ivan Ivanov",
+  "gender": "Male",
+  "phonenumber": "0987654321",
+  "employer": {
+    "id": "1234212",
+    "name": "Minev OOD"
+  }
+}
