@@ -1,0 +1,58 @@
+CREATE DATABASE Univercity
+
+CREATE TABLE Faculties
+ (
+ Id INT NOT NULL PRIMARY KEY IDENTITY,
+ Name VARCHAR(50) NOT NULL
+ )
+
+CREATE TABLE Departments
+ (
+  Id INT NOT NULL PRIMARY KEY IDENTITY,
+  Name VARCHAR(50) NOT NULL,
+  FacultyId INT NOT NULL,
+  CONSTRAINT FK_Faculty FOREIGN KEY (FacultyId) REFERENCES Faculties (Id)
+ )
+
+CREATE TABLE Titles 
+ (
+  Id INT NOT NULL PRIMARY KEY IDENTITY,
+  Name VARCHAR(50) NOT NULL
+ )
+
+CREATE TABLE Professors
+ (
+  Id INT NOT NULL PRIMARY KEY IDENTITY,
+  Name VARCHAR(50) NOT NULL,
+  TitleId INT NOT NULL,
+  DepartmentId INT NOT NULL,
+  CONSTRAINT FK_Title FOREIGN KEY (TitleId) REFERENCES Titles (Id),
+  CONSTRAINT FK_Professor_Department FOREIGN KEY (DepartmentId) REFERENCES Departments (Id)
+ )
+
+CREATE TABLE Courses
+ (
+  Id INT NOT NULL PRIMARY KEY IDENTITY,
+  Name VARCHAR(50) NOT NULL,
+  DepartmentId INT NOT NULL,
+  ProfessorID INT NOT NULL,
+  CONSTRAINT FK_Department FOREIGN KEY (DepartmentId) REFERENCES Departments (Id),
+  CONSTRAINT FK_Professor FOREIGN KEY (ProfessorID) REFERENCES Professors (Id)
+ )
+
+CREATE TABLE Students
+ (
+  Id INT NOT NULL PRIMARY KEY IDENTITY,
+  Name VARCHAR(50) NOT NULL,
+  FacultyNumber INT NOT NULL,
+  FacultyId INT NOT NULL,
+  CONSTRAINT FK_Student_Faculty FOREIGN KEY (FacultyId) REFERENCES Faculties (Id)
+ )
+
+CREATE TABLE Students_Courses
+ (
+  StudentId INT NOT NULL,
+  CourseId INT NOT NULL,
+  CONSTRAINT FK_StudentId FOREIGN KEY (StudentId) REFERENCES Students (Id),
+  CONSTRAINT FK_CoursesId FOREIGN KEY (CourseId) REFERENCES Courses (Id)
+ )
