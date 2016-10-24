@@ -1,0 +1,2 @@
+ALTER TABLE Cities
+ADD CountryId INT FOREIGN KEY REFERENCES Countries (Id)

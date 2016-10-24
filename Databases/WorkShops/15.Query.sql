@@ -1,0 +1,15 @@
+ALTER TABLE Employees
+DROP COLUMN City
+
+
+ALTER TABLE Suppliers
+DROP COLUMN City
+
+ALTER TABLE Orders
+DROP COLUMN ShipCity
+
+DROP INDEX City ON Customers
+
+ALTER TABLE Customers
+DROP COLUMN City
+
