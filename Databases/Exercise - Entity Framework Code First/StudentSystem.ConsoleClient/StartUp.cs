@@ -4,6 +4,8 @@ using System.Linq;
 using StudentSystem.Data;
 using StudentSystem.Data.Migrations;
 using DataManipulator;
+using StudentSystem.Models;
+using System.Collections.Generic;
 
 namespace StudentSystem.ConsoleClient
 {
@@ -18,12 +20,19 @@ namespace StudentSystem.ConsoleClient
             //}
 
             var manipulator = new StudentsManipulator();
-            var students = manipulator.GetAll();
-
-            foreach (var student in students)
+            var student = new Student()
             {
-                Console.WriteLine(student.Name);
-            }
+                Name = "Ivan",
+                Number = "13234",
+                Grade = 11,
+                Courses = new List<Course>()
+                {
+                    new Course()
+                    {
+                         
+                    };
+                };
+            };
         }
     }
 }

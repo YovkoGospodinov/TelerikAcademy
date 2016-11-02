@@ -8,7 +8,7 @@ namespace DataManipulator.Interfaces
 
         void Create(T entry);
 
-        void Delete(int Id);
+        void Delete(int id);
 
         void Modidy(T entry);
     }

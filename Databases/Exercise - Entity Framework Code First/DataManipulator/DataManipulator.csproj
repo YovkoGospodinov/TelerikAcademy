@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseManipulator.cs" />
+    <Compile Include="CourseManipulator.cs" />
+    <Compile Include="HomeworkManipulator.cs" />
     <Compile Include="Interfaces\IManipulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentsManipulator.cs" />

@@ -11,14 +11,15 @@ namespace StudentSystem.Models
 
         public Student()
         {
-            courses = new List<Course>();
-            homeworks = new List<Homework>();
+            this.Courses = new HashSet<Course>();
+            this.Homeworks = new HashSet<Homework>();
         }
 
         [Key]
         public int Id { get; set; }
 
         [Required]
+        [MinLength(2), MaxLength(50)]
         public string Name { get; set; }
 
         [Required]

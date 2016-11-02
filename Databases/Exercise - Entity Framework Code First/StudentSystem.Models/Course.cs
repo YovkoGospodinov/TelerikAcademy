@@ -11,8 +11,8 @@ namespace StudentSystem.Models
 
         public Course()
         {
-            students = new List<Student>();
-            homeworks = new List<Homework>();
+            this.Students = new HashSet<Student>();
+            this.Homeworks = new HashSet<Homework>();
         }
 
         [Key]

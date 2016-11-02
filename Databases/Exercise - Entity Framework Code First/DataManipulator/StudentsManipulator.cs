@@ -10,9 +10,11 @@ namespace DataManipulator
     {
         public StudentsManipulator()
             : base() { }
+
         public void Create(Student student)
         {
             base.database.Students.Add(student);
+            base.database.SaveChanges();
         }
 
         public void Delete(int id)
@@ -35,9 +37,9 @@ namespace DataManipulator
 
         public void Modidy(Student student)
         {
-            var entry = database.Entry(student);
+            var entry = base.database.Entry(student);
             entry.State = EntityState.Modified;
-            database.SaveChanges();
+            base.database.SaveChanges();
         }
     }
 }
