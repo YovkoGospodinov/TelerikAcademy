@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7CB5599A-AC19-4EAD-A7E9-221B17811CE1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{1F87E61E-D203-4916-A378-A811F3B92DD2}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StudentSystem.ConsoleClient</RootNamespace>
-    <AssemblyName>StudentSystem.ConsoleClient</AssemblyName>
+    <RootNamespace>DataManipulator</RootNamespace>
+    <AssemblyName>DataManipulator</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -52,20 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StartUp.cs" />
+    <Compile Include="BaseManipulator.cs" />
+    <Compile Include="Interfaces\IManipulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentsManipulator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataManipulator\DataManipulator.csproj">
-      <Project>{1F87E61E-D203-4916-A378-A811F3B92DD2}</Project>
-      <Name>DataManipulator</Name>
-    </ProjectReference>
     <ProjectReference Include="..\StudentSystem.Data\StudentSystem.Data.csproj">
-      <Project>{676E302C-FA33-4D63-9E06-9949BA159577}</Project>
+      <Project>{676e302c-fa33-4d63-9e06-9949ba159577}</Project>
       <Name>StudentSystem.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\StudentSystem.Models\StudentSystem.Models.csproj">
