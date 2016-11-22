@@ -1,0 +1,76 @@
+CREATE TABLE Vendors
+ (
+  Id INT PRIMARY KEY  IDENTITY,
+  Name NVARCHAR(50) NOT NULL UNIQUE
+ )
+
+CREATE TABLE Models
+ (
+  Id INT PRIMARY KEY  IDENTITY,
+  Name NVARCHAR(50) NOT NULL UNIQUE
+ )
+
+CREATE TABLE Storages
+(
+ Id INT PRIMARY KEY IDENTITY,
+ VendorId INT NOT NULL,
+ ModelId INT NOT NULL,
+ StorageType NVARCHAR(3) NOT NULL,
+ Size INT NOT NULL,
+ CONSTRAINT CHK_StorageType CHECK (StorageType = 'SSD' OR StorageType = 'HDD'),
+ CONSTRAINT FK_Storage_Vendor FOREIGN KEY (VendorId) REFERENCES Vendors (Id),
+ CONSTRAINT FK_Storage_Model FOREIGN KEY (ModelId) REFERENCES Models (Id)
+)
+
+CREATE TABLE CPUs
+(
+ Id INT PRIMARY KEY IDENTITY,
+ VendorId INT NOT NULL,
+ ModelId INT NOT NULL,
+ NumberOfCores INT NOT NULL,
+ ClockCycles FLOAT NOT NULL,
+ CONSTRAINT FK_CPU_Vendor FOREIGN KEY (VendorId) REFERENCES Vendors (Id),
+ CONSTRAINT FK_CPU_Model FOREIGN KEY (ModelId) REFERENCES Models (Id)
+)
+
+CREATE TABLE GPUs
+(
+ Id INT PRIMARY KEY IDENTITY,
+ VendorId INT NOT NULL,
+ ModelId INT NOT NULL,
+ GPUType NVARCHAR(10) NOT NULL,
+ Memory INT NOT NULL,
+ CONSTRAINT FK_GPU_Vendor FOREIGN KEY (VendorId) REFERENCES Vendors (Id),
+ CONSTRAINT FK_GPU_Model FOREIGN KEY (ModelId) REFERENCES Models (Id),
+ CONSTRAINT CHK_GPUType CHECK (GPUType = 'internal' OR GPUType = 'external')
+)
+
+CREATE TABLE Computers
+(
+ Id INT PRIMARY KEY IDENTITY,
+ ComputerType NVARCHAR(10) NOT NULL,
+ VendorId INT NOT NULL,
+ ModelId INT NOT NULL,
+ Memory INT NOT NULL,
+ CPUId INT NOT NULL,
+ CONSTRAINT CHK_ComputerType CHECK (ComputerType = 'Notebook' OR ComputerType = 'Desktop' OR ComputerType = 'Ultrabook'),
+ CONSTRAINT FK_Computer_Vendor FOREIGN KEY (VendorId) REFERENCES Vendors (Id),
+ CONSTRAINT FK_Computer_Model FOREIGN KEY (ModelId) REFERENCES Models (Id),
+ CONSTRAINT FK_Computer_CPU FOREIGN KEY (CPUId) REFERENCES CPUs (Id)
+)
+
+CREATE TABLE ComputersGPUs
+(
+ ComputerId INT NOT NULL,
+ GPUId INT NOT NULL,
+ CONSTRAINT FK_ComputersGPUs_Computer FOREIGN KEY (ComputerId) REFERENCES Computers (Id),
+ CONSTRAINT FK_ComputersGPUs_GPU FOREIGN KEY (GPUId) REFERENCES GPUs (Id)
+)
+
+CREATE TABLE ComputersStorages
+(
+ ComputerId INT NOT NULL,
+ StorageId INT NOT NULL,
+ CONSTRAINT FK_ComputersStorages_Computer FOREIGN KEY (ComputerId) REFERENCES Computers (Id),
+ CONSTRAINT FK_ComputersStorages_Storage FOREIGN KEY (StorageId) REFERENCES Storages (Id)
+)
